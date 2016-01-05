@@ -1,9 +1,15 @@
 <resources>
 	<string name="app_name">Mijn HVA</string>
 
-	<string name="title_section1">Section 1</string>
-	<string name="title_section2">Section 2</string>
-	<string name="title_section3">Section 3</string>
+	<string name="title_grades">Cijfers</string>
+	<string name="title_timetable">Rooster</string>
+	<string name="title_settings">Instellingen</string>
+
+	<string name="hva_username_key">hva_username</string>
+	<string name="hva_password_key">hva_password</string>
+
+	<string name="hva_username">Gebruikersnaam</string>
+	<string name="hva_password">Wachtwoord</string>
 
 	<string name="navigation_drawer_open">Open navigation drawer</string>
 	<string name="navigation_drawer_close">Close navigation drawer</string>
