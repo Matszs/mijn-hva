@@ -8,10 +8,8 @@ import mts.ned.mijnhva.Models.User;
 public class UserHandler {
 
 	public static User getUser(String username, String password) {
-
-		System.out.println("TEST");
-
-
+		if(HttpHandler.verifyUserDetails(username, password))
+			return new User(username, password);
 		return null;
 	}
 

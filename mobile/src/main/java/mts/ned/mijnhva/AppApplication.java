@@ -1,6 +1,9 @@
 package mts.ned.mijnhva;
 
 import android.app.Application;
+import android.os.AsyncTask;
+
+import java.io.IOException;
 
 import mts.ned.mijnhva.Models.User;
 
@@ -9,7 +12,7 @@ import mts.ned.mijnhva.Models.User;
  */
 public class AppApplication extends Application {
 
-	private User currentUser;
+	private User currentUser = null;
 
 	@Override
 	public void onCreate() {
@@ -20,4 +23,7 @@ public class AppApplication extends Application {
         this.currentUser = user;
     }
 
+	public User getUser() {
+		return this.currentUser;
+	}
 }
