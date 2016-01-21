@@ -11,6 +11,7 @@
 		<EditTextPreference
 			android:key="@string/hva_password_key"
 			android:title="@string/hva_password"
+            android:inputType="textPassword"
 			/>
 
 	</PreferenceCategory>

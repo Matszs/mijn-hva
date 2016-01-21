@@ -2,12 +2,16 @@ package mts.ned.mijnhva.Fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.preference.EditTextPreference;
+import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import mts.ned.mijnhva.AppApplication;
+import mts.ned.mijnhva.Classes.UserHandler;
 import mts.ned.mijnhva.MainActivity;
 import mts.ned.mijnhva.R;
 
@@ -42,6 +46,23 @@ public class SettingsFragment extends PreferenceFragment {
 
 		// Load the preferences from an XML resource
 		addPreferencesFromResource(R.xml.settings_fragment);
+
+
+        final EditTextPreference hvaUsernameField = (EditTextPreference)findPreference(getString(R.string.hva_username_key));
+        final EditTextPreference hvaPasswordField = (EditTextPreference)findPreference(getString(R.string.hva_password_key));
+        hvaPasswordField.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+
+                AppApplication application = (AppApplication)getActivity().getApplication();
+                application.setUser(UserHandler.getUser(hvaUsernameField.getText(), hvaPasswordField.getText()));
+
+                System.out.println("TEST");
+
+                return true;
+            }
+        });
+
 	}
 
 	@Override
